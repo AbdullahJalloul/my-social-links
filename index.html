@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Social Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 50px; background: #f4f4f4; }
+        h1 { color: #333; }
+        .bio { font-size: 1.2em; color: #666; margin: 20px 0; }
+        .profile-img { width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .social-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
+        .social-link { 
+            display: flex; flex-direction: column; align-items: center; 
+            padding: 15px; background: #fff; border-radius: 10px; 
+            width: 120px; text-decoration: none; color: #333; 
+            border: 1px solid #ddd; transition: all 0.3s ease; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .social-link:hover { 
+            transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            background: #f9f9f9; 
+        }
+        .social-link i { font-size: 28px; margin-bottom: 8px; }
+        .social-link span { font-size: 12px; font-weight: bold; }
+        .twitter i { color: #1da1f2; }
+        .twitter:hover { border-color: #1da1f2; }
+        .linkedin i { color: #0077b5; }
+        .linkedin:hover { border-color: #0077b5; }
+        .instagram i { color: #e4405f; }
+        .instagram:hover { border-color: #e4405f; }
+        .github i { color: #333; }
+        .github:hover { border-color: #333; }
+        .email i { color: #ff6b6b; }
+        .email:hover { border-color: #ff6b6b; }
+        .whatsapp i { color: #25d366; }
+        .whatsapp:hover { border-color: #25d366; }
+        hr { border: none; height: 2px; background: #ddd; margin: 40px 0; }
+        @media (max-width: 600px) { 
+            .social-link { width: 100px; padding: 12px; } 
+            .social-link span { font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Name | Social Links</h1>
+    <p class="bio">Your Bio Here | e.g., Developer & Designer Enthusiast</p>
+    <img src="profile.jpg" alt="Your Profile Photo" class="profile-img"> <!-- Upload your image as 'profile.jpg' to the repo -->
+    <hr>
+    <div class="social-grid">
+        <a href="https://twitter.com/yourusername" class="social-link twitter" title="Twitter/X" target="_blank">
+            <i class="fab fa-twitter"></i>
+            <span>Twitter</span>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" class="social-link linkedin" title="LinkedIn" target="_blank">
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+        </a>
+        <a href="https://instagram.com/yourusername" class="social-link instagram" title="Instagram" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
+        <a href="https://github.com/yourusername" class="social-link github" title="GitHub" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+        </a>
+        <a href="mailto:your.email@example.com" class="social-link email" title="Email">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+        </a>
+        <a href="https://wa.me/yourphonenumber" class="social-link whatsapp" title="WhatsApp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <!-- Add more as needed -->
+    </div>
+</body>
+</html>
