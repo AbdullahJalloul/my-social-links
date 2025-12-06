@@ -6,32 +6,119 @@
     <title>Abdullah Jalloul | Voltix Electronics Lab</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; margin: 0; padding: 50px; background: #f4f4f4; }
-        h1 { color: #333; }
-        .bio { font-size: 1.2em; color: #666; margin: 20px 0; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; margin: 20px auto; display: block; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .services {
-            background: #fff; border-radius: 10px; padding: 20px; margin: 30px auto; max-width: 600px;
-            text-align: left; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            margin: 0; 
+            padding: 50px; 
+            background: #f4f4f4; 
         }
-        .services h2 { text-align: center; color: #333; margin-bottom: 15px; }
-        .services ul { list-style: none; padding: 0; }
-        .services li { margin: 15px 0; font-size: 1.1em; padding-left: 10px; border-left: 3px solid #0077b5; }
-        .services li:hover { border-left-color: #25d366; transition: border-color 0.3s ease; }
-        .social-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
+        h1 { color: #333; }
+
+        .profile-img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            margin: 20px auto; 
+            display: block; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+
+        .lang-switcher {
+            display: inline-flex;
+            gap: 10px;
+            margin: 20px 0 10px 0;
+            flex-wrap: wrap;
+        }
+
+        .lang-btn {
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 8px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95em;
+            min-width: 90px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background: #f0f0f0;
+        }
+
+        .lang-btn.active {
+            background: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .bio-section {
+            max-width: 900px;
+            margin: 10px auto 20px auto;
+            text-align: left;
+        }
+
+        .bio-block {
+            display: none;
+        }
+
+        .bio-block.active {
+            display: block;
+        }
+
+        .bio-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+            margin-bottom: 8px;
+        }
+
+        .bio-text {
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .bio-block.arabic {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .social-grid { 
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+            margin-top: 40px; 
+        }
         .social-link {
-            display: flex; flex-direction: column; align-items: center;
-            padding: 15px; background: #fff; border-radius: 10px;
-            width: 120px; text-decoration: none; color: #333;
-            border: 1px solid #ddd; transition: all 0.3s ease;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center;
+            padding: 15px; 
+            background: #fff; 
+            border-radius: 10px;
+            width: 120px; 
+            text-decoration: none; 
+            color: #333;
+            border: 1px solid #ddd; 
+            transition: all 0.3s ease;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .social-link:hover {
-            transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             background: #f9f9f9;
         }
-        .social-link i { font-size: 28px; margin-bottom: 8px; }
-        .social-link span { font-size: 12px; font-weight: bold; }
+        .social-link i { 
+            font-size: 28px; 
+            margin-bottom: 8px; 
+        }
+        .social-link span { 
+            font-size: 12px; 
+            font-weight: bold; 
+        }
         .linkedin i { color: #0077b5; }
         .linkedin:hover { border-color: #0077b5; }
         .facebook i { color: #1877f2; }
@@ -44,43 +131,99 @@
         .email:hover { border-color: #ff6b6b; }
         .whatsapp i { color: #25d366; }
         .whatsapp:hover { border-color: #25d366; }
-        .tiktok i { color: #000; background: linear-gradient(45deg, #ff0050, #ff0000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tiktok i { 
+            color: #000; 
+            background: linear-gradient(45deg, #ff0050, #ff0000); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
         .tiktok:hover { border-color: #ff0050; }
-        hr { border: none; height: 2px; background: #ddd; margin: 40px 0; }
+        hr { 
+            border: none; 
+            height: 2px; 
+            background: #ddd; 
+            margin: 40px 0; 
+        }
         @media (max-width: 600px) {
-            .social-link { width: 100px; padding: 12px; }
-            .social-link span { font-size: 11px; }
-            .services { margin: 20px 10px; padding: 15px; }
-            .services li { font-size: 1em; }
+            .social-link { 
+                width: 100px; 
+                padding: 12px; 
+            }
+            .social-link span { 
+                font-size: 11px; 
+            }
+            body {
+                padding: 25px 15px;
+            }
+            .lang-switcher {
+                gap: 6px;
+            }
+            .lang-btn {
+                padding: 7px 10px;
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Abdullah Jalloul | Voltix Electronics Lab</h1>
-    <p class="bio">Electronics Expert | Custom Designs, Repairs & More at Voltix Electronics Lab</p>
-    <img src="profile.png" alt="Abdullah Jalloul Profile Photo" class="profile-img"> 
-   
-    <div class="services">
-        <h2>Voltix Electronics Lab Services</h2>
-        <ul>
-            <li>Designing electronic circuits and embedded systems.</li>
-            <li>Repairing mobiles, laptops, tablets, and GPU graphics cards.</li>
-            <li>Secure data recovery from hard drives.</li>
-            <li>Manufacturing custom high-quality Li-ion & LiFePO4 batteries on demand.</li>
-        </ul>
+    <img src="profile.png" alt="Abdullah Jalloul Profile Photo" class="profile-img">
+
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ar">العربية</button>
+        <button class="lang-btn" data-lang="en">English</button>
+        <button class="lang-btn" data-lang="tr">Türkçe</button>
     </div>
-   
+
+    <div class="bio-section">
+        <!-- العربية -->
+        <div class="bio-block arabic active" data-lang="ar">
+            <div class="bio-title">نبذة عني</div>
+            <p class="bio-text">
+                عبدالله جلول، مؤسس ومالك Voltix Electronics Lab. مهندس إلكترونيات وأتمتة متخصص في السيارات الكهربائية والطاقة المستدامة.
+                خبير في تصميم الدوائر الإلكترونية والأنظمة المضمنة، مع خبرة في صيانة وحدات تحكم السيارات (ECU، TCU، BCM، PCM, Dashboard)
+                وإصلاح الأجهزة الإلكترونية مثل الحواسيب واسترداد بيانات SSD وتصنيع بطاريات Li-ion وLiFePO4 مخصصة،
+                بالإضافة إلى تقنيات IoT، EVSE، OCPP، وBMS. أقدم حلولاً شاملة تجمع بين الابتكار والكفاءة للأجهزة الذكية والسيارات.
+            </p>
+        </div>
+
+        <!-- English -->
+        <div class="bio-block" data-lang="en">
+            <div class="bio-title">About Me</div>
+            <p class="bio-text">
+                Abdullah Jalloul, founder and owner of Voltix Electronics Lab, is an Electronics and Automation Engineer specializing in electric vehicles 
+                and sustainable energy. He is an expert in designing electronic circuits and embedded systems, with experience in servicing automotive control 
+                units (ECU, TCU, BCM, PCM, dashboard), repairing electronic devices such as computers, performing SSD data recovery, and building custom 
+                Li-ion and LiFePO4 battery packs. In addition, he works with IoT, EVSE, OCPP, and BMS technologies, delivering comprehensive solutions that 
+                combine innovation and efficiency for smart devices and vehicles.
+            </p>
+        </div>
+
+        <!-- Türkçe -->
+        <div class="bio-block" data-lang="tr">
+            <div class="bio-title">Hakkımda</div>
+            <p class="bio-text">
+                Abdullah Jalloul, Voltix Electronics Lab’ın kurucusu ve sahibi olup, elektrikli araçlar ve sürdürülebilir enerji alanında uzmanlaşmış 
+                bir Elektronik ve Otomasyon Mühendisidir. Elektronik devre tasarımı ve gömülü sistemler konusunda uzmandır; ECU, TCU, BCM, PCM ve gösterge 
+                paneli (dashboard) gibi araç kontrol ünitelerinin bakımında deneyimlidir. Bilgisayar gibi elektronik cihazların onarımı, SSD veri kurtarma 
+                ve özel Li-ion ile LiFePO4 batarya paketlerinin üretimi alanlarında çalışmaktadır. Ayrıca IoT, EVSE, OCPP ve BMS teknolojileriyle ilgilenmekte 
+                ve akıllı cihazlar ile araçlar için yenilik ile verimliliği birleştiren bütüncül çözümler sunmaktadır.
+            </p>
+        </div>
+    </div>
+
     <hr>
+
     <div class="social-grid">
         <a href="https://wa.me/905511587981" class="social-link whatsapp" title="WhatsApp" target="_blank">
             <i class="fab fa-whatsapp"></i>
             <span>WhatsApp</span>
         </a>
-		<a href="https://www.tiktok.com/@voltix_electronics_lab" class="social-link tiktok" title="TikTok" target="_blank">
+        <a href="https://www.tiktok.com/@voltix_electronics_lab" class="social-link tiktok" title="TikTok" target="_blank">
             <i class="fab fa-tiktok"></i>
             <span>TikTok</span>
         </a>
-		<a href="https://www.linkedin.com/in/abdullah-jalloul-a4b044151/" class="social-link linkedin" title="LinkedIn" target="_blank">
+        <a href="https://www.linkedin.com/in/abdullah-jalloul-a4b044151/" class="social-link linkedin" title="LinkedIn" target="_blank">
             <i class="fab fa-linkedin"></i>
             <span>LinkedIn</span>
         </a>
@@ -96,8 +239,31 @@
             <i class="fab fa-github"></i>
             <span>GitHub</span>
         </a>
-
-        <!-- Add more as needed -->
     </div>
+
+    <script>
+        // تبديل اللغات عند الضغط على الأزرار
+        const langButtons = document.querySelectorAll('.lang-btn');
+        const bioBlocks = document.querySelectorAll('.bio-block');
+
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const selectedLang = btn.getAttribute('data-lang');
+
+                // فعّل الزر المختار فقط
+                langButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // أظهر البلوك المطابق وأخفِ الباقي
+                bioBlocks.forEach(block => {
+                    if (block.getAttribute('data-lang') === selectedLang) {
+                        block.classList.add('active');
+                    } else {
+                        block.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
